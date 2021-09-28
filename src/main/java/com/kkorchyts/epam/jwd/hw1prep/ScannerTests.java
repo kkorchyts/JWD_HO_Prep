@@ -1,7 +1,7 @@
 package com.kkorchyts.epam.jwd.hw1prep;
 
 import java.util.Scanner;
-import static com.kkorchyts.epam.jwd.hw1prep.ScannerUtils.genIntValue;
+import static com.kkorchyts.epam.jwd.utils.ScannerUtils.genIntValue;
 
 public class ScannerTests {
     public static void main(String[] args) {

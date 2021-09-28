@@ -1,4 +1,4 @@
-package com.kkorchyts.epam.jwd.hw1prep;
+package com.kkorchyts.epam.jwd.utils;
 
 import java.util.Scanner;
 import java.util.function.Predicate;
