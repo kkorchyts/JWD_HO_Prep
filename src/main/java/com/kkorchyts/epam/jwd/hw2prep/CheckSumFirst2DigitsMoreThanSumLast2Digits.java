@@ -33,7 +33,7 @@ public class CheckSumFirst2DigitsMoreThanSumLast2Digits {
         int number;
         boolean checkIfSumFirst2DigitsMoreThanSumLast2Digits;
         do {
-            number = ScannerUtils.genIntValue("Enter four digits positive number", val -> val > 1000 && val < 9999);
+            number = ScannerUtils.getInteger("Enter four digits positive number", val -> val > 1000 && val < 9999);
             checkIfSumFirst2DigitsMoreThanSumLast2Digits = CheckIfSumFirst2DigitsMoreThanSumLast2Digits(number);
             System.out.println(checkIfSumFirst2DigitsMoreThanSumLast2Digits);
         } while (number != 9999);

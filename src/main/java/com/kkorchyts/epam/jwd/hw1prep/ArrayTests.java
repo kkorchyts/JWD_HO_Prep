@@ -2,7 +2,7 @@ package com.kkorchyts.epam.jwd.hw1prep;
 
 import java.util.Random;
 
-import static com.kkorchyts.epam.jwd.utils.ScannerUtils.genIntValue;
+import static com.kkorchyts.epam.jwd.utils.ScannerUtils.getInteger;
 
 public class ArrayTests {
 
@@ -31,7 +31,7 @@ public class ArrayTests {
     }
 
     public static int[] createArray() {
-        int arrayVolume = genIntValue("Enter array volume, please: ", vol -> vol > 0);
+        int arrayVolume = getInteger("Enter array volume, please: ", vol -> vol > 0);
         return new int[arrayVolume];
     }
 
@@ -39,7 +39,7 @@ public class ArrayTests {
         public static void main(String[] args) {
             int[] array = createArray();
             for (int i = 0; i < array.length; i++) {
-                array[i] = genIntValue(String.format("Please, enter a value of element number %d: ", i), null);
+                array[i] = getInteger(String.format("Please, enter a value of element number %d: ", i), null);
             }
             showArray(array);
         }

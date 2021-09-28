@@ -1,7 +1,7 @@
 package com.kkorchyts.epam.jwd.hw1prep;
 
 import java.util.Scanner;
-import static com.kkorchyts.epam.jwd.utils.ScannerUtils.genIntValue;
+import static com.kkorchyts.epam.jwd.utils.ScannerUtils.getInteger;
 
 public class ScannerTests {
     public static void main(String[] args) {
@@ -68,8 +68,8 @@ public class ScannerTests {
 
     static class TestSwitch{
         public static void main(String[] args) {
-            int year = genIntValue("Enter a year: ", y -> y > 0);
-            int month = genIntValue("Enter a month: ", m -> m > 0 && m < 13);
+            int year = getInteger("Enter a year: ", y -> y > 0);
+            int month = getInteger("Enter a month: ", m -> m > 0 && m < 13);
 
             System.out.println(year);
             System.out.println(month);
