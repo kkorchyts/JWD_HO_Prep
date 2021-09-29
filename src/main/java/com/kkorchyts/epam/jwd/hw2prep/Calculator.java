@@ -48,22 +48,47 @@ public class Calculator {
         System.out.println(" ------ ");
     }
 
-    public static void runTask4CheckIfPointInRegion() {
-        System.out.println(" --- Task 4: Check if point is in a region --- ");
-        Predicate<Point> predicate = p ->
-                (p.getX() >= -2 && p.getX() <= 2 && p.getY() >= 0 && p.getY() <= 4) ||
-                (p.getX() >= -4 && p.getX() <= 4 && p.getY() <= 0 && p.getY() >= -3);
+
+
+    ///////////////////////////////////////////////////////////////////////////
+    public static boolean validPointInRegion(Point p) {
+        boolean result = false;
+        if (p.getX() >= -2 && p.getX() <= 2 && p.getY() >= 0 && p.getY() <= 4) {
+            if (p.getX() >= -4 && p.getX() <= 4 && p.getY() <= 0 && p.getY() >= -3) {
+                result = true;
+            }
+        }
+        return result;
+    }
+
+    public static Point readPoint() {
 
         Point p = new Point(ScannerUtils.getInteger("Please, enter x: " , null),
                 ScannerUtils.getInteger("Please, enter y: " , null));
 
-        if (predicate.test(p)) {
+
+        int x = ScannerUtils.getInteger("Please, enter x: " , null);
+        int y = ScannerUtils.getInteger("Please, enter y: " , null);
+
+        Point point = new Point(x, y);
+
+        return point;
+
+    }
+
+    public static void runTask4CheckIfPointInRegion() {
+        System.out.println(" --- Task 4: Check if point is in a region --- ");
+
+        Point p = readPoint();
+
+        if (validPointInRegion(p)) {
             System.out.println("Point is in the region");
         } else {
             System.out.println("Point isn't in the region");
         }
     }
 
+    ///////////////////////////////////////////////////////////////////////////
     public static void runTask5Exponentiation() {
         System.out.println(" --- Task 5: exponentiation --- ");
 
