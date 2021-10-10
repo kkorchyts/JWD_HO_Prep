@@ -2,7 +2,7 @@ package com.kkorchyts.epam.jwd.hw1prep;
 
 import java.util.Random;
 
-import static com.kkorchyts.epam.jwd.utils.ScannerUtils.getInteger;
+import static com.kkorchyts.epam.jwd.util.ScannerUtil.getInteger;
 
 public class ArrayTests {
 

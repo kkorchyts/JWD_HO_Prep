@@ -1,8 +1,7 @@
 package com.kkorchyts.epam.jwd.hw2prep;
 
-import com.kkorchyts.epam.jwd.utils.ScannerUtils;
+import com.kkorchyts.epam.jwd.util.ScannerUtil;
 
-import java.util.Objects;
 import java.util.function.Predicate;
 
 public class Calculator {
@@ -27,9 +26,9 @@ public class Calculator {
     public static void runTask2EvaluateExpression() {
         System.out.println(" --- Task 2: evaluate expression --- ");
         Predicate<Double> predicate = i -> i >= 0;
-        double a = ScannerUtils.getDouble("Please, enter a (positive number): ", predicate);
-        double b = ScannerUtils.getDouble("Please, enter b (positive number): ", predicate);
-        double c = ScannerUtils.getDouble("Please, enter c (positive number): ", predicate);
+        double a = ScannerUtil.getDouble("Please, enter a (positive number): ", predicate);
+        double b = ScannerUtil.getDouble("Please, enter b (positive number): ", predicate);
+        double c = ScannerUtil.getDouble("Please, enter c (positive number): ", predicate);
 
         double exp = (b + Math.sqrt(b*b + 4 * a * c)) /  (2 * a) - a * a * a * c + 1 / (b * b);
 
@@ -40,8 +39,8 @@ public class Calculator {
     public static void runTask3CalculateHypotenuse() {
         System.out.println(" --- Task 3: evaluate calculate hypotenuse --- ");
         Predicate<Double> predicate = i -> i >= 0;
-        double cathetusA = ScannerUtils.getDouble("Please, enter leg a: " , null);
-        double cathetusB = ScannerUtils.getDouble("Please, enter leg b: ", null);
+        double cathetusA = ScannerUtil.getDouble("Please, enter leg a: " , null);
+        double cathetusB = ScannerUtil.getDouble("Please, enter leg b: ", null);
         double hypotenuse = Math.sqrt(cathetusA * cathetusA + cathetusB * cathetusB);
 
         System.out.printf("Hypotenuse of triangle (cathetuses a = %f and b = %f hypotenuse) - %f\n", cathetusA, cathetusB, hypotenuse);
@@ -63,12 +62,12 @@ public class Calculator {
 
     public static Point readPoint() {
 
-        Point p = new Point(ScannerUtils.getInteger("Please, enter x: " , null),
-                ScannerUtils.getInteger("Please, enter y: " , null));
+        Point p = new Point(ScannerUtil.getInteger("Please, enter x: " , null),
+                ScannerUtil.getInteger("Please, enter y: " , null));
 
 
-        int x = ScannerUtils.getInteger("Please, enter x: " , null);
-        int y = ScannerUtils.getInteger("Please, enter y: " , null);
+        int x = ScannerUtil.getInteger("Please, enter x: " , null);
+        int y = ScannerUtil.getInteger("Please, enter y: " , null);
 
         Point point = new Point(x, y);
 
@@ -94,7 +93,7 @@ public class Calculator {
 
         double[] array =  new double[3];
         for (int i = 0; i < array.length; i++) {
-            array[i] = ScannerUtils.getDouble(String.format("Please, enter element №%d: ", i), null);
+            array[i] = ScannerUtil.getDouble(String.format("Please, enter element №%d: ", i), null);
         }
 
         int pow;
@@ -114,7 +113,7 @@ public class Calculator {
 
         double[] array =  new double[3];
         for (int i = 0; i < array.length; i++) {
-            array[i] = ScannerUtils.getDouble(String.format("Please, enter element №%d: ", i), null);
+            array[i] = ScannerUtil.getDouble(String.format("Please, enter element №%d: ", i), null);
         }
 
         double min = array[0];
@@ -142,9 +141,9 @@ public class Calculator {
     public static void runTask7EvaluateFunctionFromAToB() {
         System.out.println(" --- Task 7: Evaluate function from a to b with step  --- ");
 
-        double from = ScannerUtils.getDouble("Please, enter a: ", null);
-        double to = ScannerUtils.getDouble("Please, enter b: ", b -> b > from );
-        double step = ScannerUtils.getDouble("Please, enter h: ", h -> h < to - from );
+        double from = ScannerUtil.getDouble("Please, enter a: ", null);
+        double to = ScannerUtil.getDouble("Please, enter b: ", b -> b > from );
+        double step = ScannerUtil.getDouble("Please, enter h: ", h -> h < to - from );
         int countOfIterations = (to - from) % step == 0 ? (int)((to - from) / step) - 1: (int)((to - from) / step) ;
         double[][] result = new double[countOfIterations + 2][2];
         result[0][0] = from;
@@ -164,13 +163,13 @@ public class Calculator {
 
     public static void runTask8EvaluateSumIfMultiple() {
         System.out.println(" --- Task 8: Evaluate sum of elements which multiple by K  --- ");
-        int arraySize = ScannerUtils.getInteger("Please, enter array size: ", size -> size > 0);
+        int arraySize = ScannerUtil.getInteger("Please, enter array size: ", size -> size > 0);
         int[] array = new int[arraySize];
         for (int i = 0; i < arraySize; i++) {
-            array[i] = ScannerUtils.getInteger(String.format("Please, enter element №%d: ", i),  size -> size > 0);
+            array[i] = ScannerUtil.getInteger(String.format("Please, enter element №%d: ", i), size -> size > 0);
         }
 
-        int divider = ScannerUtils.getInteger("Please, enter divider k: ", k -> k > 0);
+        int divider = ScannerUtil.getInteger("Please, enter divider k: ", k -> k > 0);
         int sum = 0;
 
         for (int i: array) {
@@ -185,22 +184,22 @@ public class Calculator {
 
     public static void runTask9UniteArrays() {
         System.out.println(" --- Task 9: Unite 2 arrays  --- ");
-        int firstArraySize = ScannerUtils.getInteger("Please, enter first array size: ", size -> size > 0);
+        int firstArraySize = ScannerUtil.getInteger("Please, enter first array size: ", size -> size > 0);
         int[] firstArray = new int[firstArraySize];
 
         for (int i = 0; i < firstArraySize; i++) {
-            firstArray[i] = ScannerUtils.getInteger(String.format("Please, enter element №%d: ", i),  size -> size > 0);
+            firstArray[i] = ScannerUtil.getInteger(String.format("Please, enter element №%d: ", i), size -> size > 0);
         }
 
-        int secondArraySize = ScannerUtils.getInteger("Please, enter second array size: ", size -> size > 0);
+        int secondArraySize = ScannerUtil.getInteger("Please, enter second array size: ", size -> size > 0);
         int[] secondArray = new int[secondArraySize];
 
         for (int i = 0; i < secondArraySize; i++) {
-            secondArray[i] = ScannerUtils.getInteger(String.format("Please, enter element №%d: ", i),  size -> size > 0);
+            secondArray[i] = ScannerUtil.getInteger(String.format("Please, enter element №%d: ", i), size -> size > 0);
         }
 
 
-        int divider = ScannerUtils.getInteger("Please, enter divider k: ", k -> k >= 0 && k < firstArraySize);
+        int divider = ScannerUtil.getInteger("Please, enter divider k: ", k -> k >= 0 && k < firstArraySize);
 
         int[] result = new int[firstArraySize + secondArraySize];
 
@@ -225,7 +224,7 @@ public class Calculator {
 
     public static void runTask10FormArray() {
         System.out.println(" --- Task 10: Form array by pattern  --- ");
-        int n = ScannerUtils.getInteger("Please, enter array size: ", size -> size > 0);
+        int n = ScannerUtil.getInteger("Please, enter array size: ", size -> size > 0);
         int[][] array = new int[n][n];
 
         for (int i = 0; i < n; i++) {

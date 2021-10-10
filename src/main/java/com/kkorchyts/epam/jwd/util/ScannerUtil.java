@@ -1,9 +1,9 @@
-package com.kkorchyts.epam.jwd.utils;
+package com.kkorchyts.epam.jwd.util;
 
 import java.util.Scanner;
 import java.util.function.Predicate;
 
-public class ScannerUtils {
+public class ScannerUtil {
     static final String WRONG_VALUE_ENTERED_MESSAGE = "Please, enter the correct value!";
 
     public static int getInteger(String message, Predicate<Integer> predicate) {
